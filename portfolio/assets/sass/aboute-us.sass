@@ -1,0 +1,163 @@
+.wrap-aboute-us
+	background-color: white
+	line-height: 34px
+	margin-bottom: 100px 
+
+	h4,
+	h2
+		margin-bottom: 0
+		line-height: inherit
+
+	.container-fluid
+		.aboute-us-inner
+			position: relative
+			display: flex
+			justify-content: space-between
+			align-items: center
+			flex-wrap: nowrap
+			padding: 40px 0
+
+			@media(max-width: 992px)
+				flex-wrap: wrap
+
+		@media(max-width: 1200px)
+			padding: 0 20px
+
+
+
+.aboute-us-inner
+	.aboute-us-block1		
+		position: relative		
+		width: 55%
+
+		@media(max-width: 992px)
+			width: 100%
+			margin: 0 90px 20px
+			text-align: center
+
+		@media(max-width: 576px)
+			margin: 0 5px 20px
+
+		h4
+			position: relative
+			font-size: .85em
+			font-weight: 600 
+			color: #666
+			z-index: 4
+
+		h2 
+			position: relative 
+			font-family: 'Roboto'
+			font-size: 24px			
+			z-index: 4
+
+		p
+			font-size: 14px
+			font-weight: 500
+			line-height: 24px
+			color: #5e646a
+			margin: 70px 0 39px
+			z-index: 4
+			position: relative
+
+			@media(max-width: 1035px)
+				margin: 40px 0 30px
+
+		a
+			display: inline-block
+			position: relative
+			background-color: $dark
+			background-color: #696969
+			text-align: center
+			line-height: 50px
+			width: 170px
+			font-size: 14px
+			z-index: 4
+			overflow: hidden
+
+			span
+				position: relative
+				left: 0
+				line-height: 50px
+				color: white
+				z-index: 4
+				transition: all .2s ease-in-out 
+
+			.fa
+				position: absolute
+				left: -50px
+				bottom: 0
+				display: inline-block
+				width: 48px	
+				margin: 1px
+				line-height: 48px
+				color: $dark
+				color: #696969
+				background-color: $normal3
+				background-color: white			
+				transition: all .2s ease-in-out
+
+		a:hover span			
+			left: 20px
+
+		a:hover .fa				
+			left: 0px
+
+.aboute-us-inner
+	.aboute-us-block2
+		position: relative
+
+		.us-block2-inner
+			display: flex
+			justify-content: flex-end
+
+			@media(max-width: 992px)
+				justify-content: center
+
+			.aboute-us-box
+				position: relative
+				padding: 10px
+				min-width: 252px
+				max-width: 313px
+				font-size: 20px
+				font-weight: 600
+				background-color: white
+
+				.box-a				
+					display: inline-block
+					width: 100%
+					height: 100%
+					padding: 40px 10px 60px
+					border: 1px solid $dark2
+
+					.box-a-title
+						position: relative
+						text-align: center
+						padding-bottom: 10px
+						font-size: 20px	
+						background-color: white
+						color: black
+						z-index: 1
+
+					.contr-span
+						position: absolute
+						bottom: 70px
+						left: 0
+						width: 100%
+						text-align: center
+						transition: all .3s linear
+
+						.box-a-more
+							padding: 10px
+							border: 1px solid black
+							font-size: 14px
+							font-weight: 500
+							background-color: $normal
+							background-color: white
+							color: black
+
+					&:hover 
+						.contr-span
+							bottom: 34px
+
+
