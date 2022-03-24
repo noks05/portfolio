@@ -1,0 +1,347 @@
+.Wrapper4
+	background-color: whitesmoke
+
+.tarriffs-contr ul
+	list-style: none
+	
+.title-wrap4
+	color: White
+
+.tariffs-radio-row
+	width: 100%
+	margin: 0 auto 10px
+	padding: 10px
+	border-radius: 10px
+	background: white
+	box-shadow: 0 0 10px 3px #00000029		
+
+	@media (max-width: 991px)
+		max-width: 685px
+
+	@media (max-width: 575px)
+		max-width: 333px
+
+.tariffs-radio-items	
+	display: flex
+	justify-content: space-around
+
+	@media (max-width: 575px)
+		display: block
+		max-width: 165px
+		margin: 0 auto
+
+.tariffs-radio-item
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: center
+
+	@media (max-width: 575px)
+		justify-content: initial
+
+.tariffs-radio-box
+	position: absolute
+	top: 0
+	left: 0
+	opacity: 0
+
+.label-radio-box
+	display: flex
+	align-items: center
+	font-size: 25px
+	cursor: pointer
+
+	&:hover	
+		.checkbox-tarif			
+			border: 1px solid $blue-light
+
+	@media (max-width: 991px)
+		font-size: 16px
+
+	.checkbox-tarif
+		position: relative
+		display: block
+		width: 25px
+		height: 25px
+		margin-right: 10px
+		border: 1px solid black
+		border-radius: 3px
+		transition: border-color .2s ease-in-out
+
+		@media (max-width: 991px)
+			width: 17px
+			height: 17px
+
+		.fa
+			position: absolute
+			display: none
+			top: 1px
+			left: 1px
+			font-size: 20px
+			color: white
+
+			@media (max-width: 991px)
+				font-size: 13px
+
+.container-wrap4
+	input[type=radio]:checked + 
+		.label-radio-box
+			.checkbox-tarif
+				border: 1px solid $blue-light
+				background-color: $blue-light
+
+			.fa
+				display: block
+
+.contr-radio-item-text
+	display: flex
+	align-items: center
+
+	@media (min-width: 576px) and (max-width: 700px)
+		flex-direction: column
+
+.tarif-sale
+	padding: 3px
+	border-radius: 3px
+	font-size: 28px
+	font-weight: 700
+	color: $blue-light	
+
+	@media (max-width: 991px)
+		font-size: 23px
+
+.tarriffs-contr
+	display: flex
+	justify-content: center
+
+.tarriffs-contr
+	margin-bottom: 40px
+
+	.wrap-block-tarriffs
+		max-width: 351px
+		border-radius: 10px
+
+		&:last-child
+			margin-right: 0
+
+.card-my-tarif
+	height: 100%
+	text-align: center
+	padding-bottom: 30px
+	border: 1px solid #e4e4e4	
+	border-radius: 10px
+	background-color: white
+
+	.cont-card
+		height: 100%
+
+	.subtitle-card
+		padding: 20px 20px 10px
+		font-size: 12px
+		font-weight: 500
+		color: grey
+
+	.title-card
+		width: 189px
+		margin: 0 auto 40px
+		padding: 3px 0
+		border-radius: 5px
+		font-size: 25px
+		font-weight: 400
+		color: #42ab53
+		// background-color: #0eca2d2b
+
+	.number-money
+		margin-bottom: 10px
+		font-size: 39px
+		color: black
+
+	.tarif-price
+		position: relative
+		display: none
+
+	.price-active
+		display: block
+
+	.text-money
+		font-size: 15px
+		color: grey
+
+	.old-price
+		position: absolute
+		top: -53%
+		left: 46%
+		font-size: 23px
+		color: grey
+
+	.old-money:before
+		content: ''
+		position: absolute
+		top: 15px
+		left: -3px
+		width: 31px
+		height: 1px
+		background-color: #888
+
+	.sale-money
+		padding: 5px
+		border-radius: 3px
+		font-size: 15px
+		background-color: $green
+		color: white
+
+	.tarif-info
+		max-width: 250px
+		margin:0 auto 20px
+
+		@media (max-width: 575px)
+			display: none
+
+	.item-card-name
+		width: 33%
+		text-align: start
+
+	.line-tarif-info
+		height: 1px
+		width: 10%
+		border-bottom: 1px dotted #c4c3c3
+
+	.item-card-value
+		width: 33%
+		text-align: end
+
+	li
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 20px 20px 0 
+		font-size: 14px	
+		letter-spacing: 0px
+
+	li:last-child
+		padding-bottom: 20px
+
+.but-tariff
+	height: 45px
+	width: 118px
+	border: none
+	border-radius: 5px
+	font-size: 14px
+	font-weight: bold
+	text-transform: uppercase
+	letter-spacing: 1px
+	background-color: $blue-light
+	color: white
+	cursor: pointer
+	transition: all 100ms linear
+
+	&:hover
+		background-color: $blue
+
+.wrap-block-tarriffs-free
+	.title-card
+		color: $green-light
+
+	.but-tariff
+		border: 1px solid $green-light
+		background-color: white
+		color: $green-light
+
+		&:hover
+			background-color: $green-light
+			color: white
+
+.wrap-block-tarriffs-light
+	.card-my-tarif
+		border: 3px solid white
+
+	.title-card
+		border: 1px solid black
+		font-weight: 300
+		color: black
+
+.wrap-block-tarriffs-standart
+	.card-my-tarif
+		border: 3px solid black
+
+	.title-card
+		color: white
+		background-color: black
+
+.wrap-block-tarriffs-professional
+	.card-my-tarif
+		border: 1px solid black
+		background-color: black
+		color: white
+
+	.title-card
+		color: white
+
+	.number-money
+		color: white
+
+.contr-demo
+	text-align: center
+
+	.text-demo
+		margin-bottom: 20px
+		font-size: 30px
+		color: white
+
+		.free-demo
+			font-weight: 500
+
+	.but-demo
+		padding: 20px 40px
+		border: 1px solid $green-light
+		border-radius: 3px
+		font-size: 20px
+		font-weight: 400
+		color: white
+		background-color: $green-light
+		transition: all 100ms linear
+
+		&:hover
+			background-color: #d9680bfc
+
+.card-my-tarif
+	.contr-tarif-list-drop
+		display: none
+		margin-bottom: 40px
+
+		@media (max-width: 575px)
+			display: block
+
+	.tarif-info-drop
+		display: block
+		margin-bottom: 40px
+
+	.tarif-item-none
+		display: none
+
+	.tarif-list-active
+		.tarif-item-none
+			display: flex
+
+.but-drop-list-tarif
+	max-width: 250px
+	margin: 0 auto
+	padding-right: 20px
+	background-image: url('../jpg-png-svg/down-arrow.svg') 
+	background-size: contain
+	background-position: right
+	background-position-y: 1px
+	background-repeat: no-repeat
+	color: blue
+	cursor: pointer
+
+.but-list-active
+	background-image: url('../jpg-png-svg/up-arrow.svg')
+
+
+
+
+
+
+
+
