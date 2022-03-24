@@ -1,0 +1,114 @@
+.Wrapper3
+	position: relative
+	overflow: hidden
+	background-color: #fff
+	z-index: 2
+
+	.title-wrap3
+		color: black
+
+	.step-row2	
+		flex-direction: row-reverse
+
+	.step-row
+		position: relative
+		display: flex
+		justify-content: space-between
+		margin-bottom: 40px
+		z-index: 2
+
+		@media (max-width: 991px)
+			flex-direction: column
+			align-items: center
+
+	.step-row-subtitle
+		display: flex
+		margin-bottom: 20px
+		align-items: center
+		font-weight: bold
+
+		.step-row-icon
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 50px
+			height: 50px
+			border-radius: 50%
+			font-size: 20px
+			font-weight: 400
+			background-color: $dark-blue
+			background-color: $green-light
+			color: white
+
+		.step-row-subtitle-t
+			margin-left: 20px
+			font-size: 16px
+			font-weight: 400
+
+	.step-row-text
+		margin-bottom: 20px
+		line-height: 23px
+		color: $green-dirty
+
+	.step-row-img-zoom
+		position: relative
+		border-radius: 7px
+		background-color: black
+		cursor: pointer
+
+	.fa-search-plus
+		position: absolute
+		top: 38%
+		right: 44%
+		font-size: 60px
+		color: white
+		transition: opacity .2s ease-in-out
+
+		@media (max-width: 400px)
+			top: 25%
+			right: 36%
+
+	.img-step-row
+		position: relative
+		width: 100%
+		height: 100%
+		border-radius: 5px
+		box-shadow: 0 0 40px #e2e2e2
+		transition: opacity .2s ease-in-out
+		z-index: 5
+
+		&:hover
+			opacity: 0.9
+
+	.step-row-block1,
+	.step-row-img-zoom
+		max-width: 48%
+
+		@media (max-width: 991px)
+			max-width: 90%
+
+
+// увеличение картинки по клику из 3 блока				
+.wrap-modal-zoom-img
+	position: fixed
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	background-color: #0007
+	opacity: 0
+	z-index: -1
+	transition: all .2s ease-in-out
+
+.modal-zoom-img-active
+	display: block
+	opacity: 1
+	z-index: 10000
+			
+.contr-img-block3-zoom
+	position: relative
+	top: 7%
+	max-width: 1400px
+	margin: 0 auto
+	border-radius: 10px
+	overflow: hidden

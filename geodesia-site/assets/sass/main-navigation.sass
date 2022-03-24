@@ -1,0 +1,221 @@
+// bootstrap сброс
+a
+	color: black
+
+	&:hover
+		color: black
+
+ul
+	margin-bottom: 0
+
+.field-nav-wrap,
+.main-navigation
+	line-height: normal
+
+.field-nav-wrap
+	position: fixed
+	width: 100%
+	top: 0
+	z-index: 999
+	transition: top .3s linear
+
+.field-nav-active
+	top: 66px
+
+.container-fluid
+	padding-left: 0
+	padding-right: 0		
+
+	.field-nav-contr-inner
+		display: flex
+		justify-content: space-between
+
+		.field-nav-block
+			width: 25%
+			text-align: center
+			padding: 3px 10px
+			background-color: $normal
+			border-left: 1px solid #f0f0f0
+
+			&:hover
+				background-color: $normal3
+
+				.field-nav-title
+					color: $dark
+
+			.field-nav-title
+				font-size: 14px
+				color: white
+
+
+// закоментирован тогл меню для выпадающего меню 
+.main-navigation
+	position: fixed
+	z-index: 1000
+	font-size: 15px
+	top: 0
+	width: 100%
+	border-bottom: 1px solid #eee
+	background-color: white
+
+	.nav-drop
+		position: fixed
+		top: 65px
+		right: -204px
+		display: none
+		justify-content: center
+		align-items: center
+		width: 100%
+		padding: 20px
+		background: #eee
+
+		ul
+			padding-left: 0
+
+			li
+				padding: 10px
+				font-size: 16px
+
+				&:hover
+						cursor: pointer
+
+						a
+							color: #cfbcae
+
+						.fa
+							transform: rotateX(180deg)
+							color: #cfbcae
+
+	.navdrop-active
+		display: flex
+		right: 0
+
+		@media(min-width: 1200px)
+			display: none
+
+	.container-fluid
+		padding-left: 0
+		padding-right: 0
+		
+		.navigation
+			display: flex
+			justify-content: space-between
+
+.navigation
+	position: relative
+	background-color: white
+	z-index: 1000
+
+	.logo
+		display: flex
+		align-items: center
+		padding-left: 10px
+
+		.fa
+			font-size: 27px
+			color: $normal
+
+		.logo-title
+			font-size: 23px
+			margin-left: 10px
+			color: black
+
+			span 
+				color: $normal
+
+	.navigation-block2	
+		display: flex	
+
+		.block2-menu
+			.nav-static
+				ul
+					display: flex
+					line-height: 3
+					padding: 10px 20px
+
+					li
+						margin-left: 30px
+
+						.fa
+							position: relative
+							display: inline-block
+							padding-left: 5px							
+							transition: all 300ms linear
+
+					li:hover
+						cursor: pointer
+
+						a
+							color: $normal
+
+						.fa
+							transform: rotateX(180deg)
+							color: $normal
+
+				@media(max-width: 1200px)
+					display: none
+
+		.toggle-menu
+			display: none
+			border-left: 1px solid #eee
+			padding: 0 20px
+			line-height: 64px
+			font-size: 20px
+			z-index: 1002
+			cursor: pointer
+			transition: all 200ms linear
+
+			&:hover
+				background-color: #eee
+
+			@media(max-width: 1200px)
+				display: block
+
+		.toggle-active
+			background-color: #eee
+
+			.fa:before 
+				content: '\f00d'				
+
+		.block2-work-now
+			line-height: 3
+			padding: 10px 20px
+			border-left: 1px solid #eae9e9
+			position: relative
+
+			span 
+				color: #757575
+				position: relative
+				z-index: 2
+
+			@media(max-width: 566px)
+				display: none
+
+		.block2-work-now:after
+			content: ''
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 0
+			top: 100%
+			background: #f7f7f7
+			z-index: 1
+			transition: all .3s ease-in-out
+
+		.block2-work-now:hover:after
+			top: 0
+
+		.block2-phone
+			padding: 12px 20px
+			background-color: $normal3
+
+			a
+				font-size: 1.2em	
+
+			.phone-item
+				display: flex
+				justify-content: right
+				padding-right: 3px
+				margin-top: 2px
+				font-size: .850em	
+				color:  $timework
