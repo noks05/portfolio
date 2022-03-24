@@ -1,0 +1,78 @@
+.Wrapper2
+	position: relative
+	z-index: 3
+
+.title-wrap2
+	color: black
+
+.contr-benefit-box
+	max-width: 387px
+	min-height: 380px
+	max-height: 400px
+
+	@media (max-width: 575px)
+		max-width: 300px
+		min-height: 223px
+
+.content-wrap2
+	display: flex
+	justify-content: center
+	width: 100%
+	margin-right: 0
+	margin-left: 0
+
+.content-wrap2-benefit
+	position: relative
+	height: 100%
+	padding: 20px
+	border: 1px solid #ff87241f
+	border-radius: 7px
+	text-align: center
+	overflow: hidden
+	background: white
+	z-index: 1
+
+	.title-benefit		
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		min-height: 56px
+		font-size: 24px
+		font-weight: 500
+		z-index: 2
+
+	.text-benefit			
+		position: relative
+		text-align: start
+		margin: 20px 0
+		color: #7c7c7c
+		z-index: 2
+
+		@media (max-width: 575px)
+			display: none
+
+	&:after
+		content: ''
+		position: absolute
+		bottom: 15px
+		left: 49%
+		width: 10px
+		height: 10px
+		border-radius: 50%
+		background-color: #ff87241f
+		transition: all .5s ease-in-out
+
+	&:hover:after
+		transform: scale(52)
+
+.benefit-icon
+	height: 70px
+	width: 70px
+	margin: 0 auto 20px
+	background-image: url('../jpg-png-svg/benefit-icon.svg')
+	background-size: contain
+	background-repeat: no-repeat
+
+	@media (max-width: 575px)
+		margin-bottom: 10px

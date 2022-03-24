@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<title>Parser Service</title>
+	<link rel="icon" href="assets/jpg-png-svg/logo-fox1.png">
+	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/owlcarousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/owlcarousel/owl.theme.default.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+
+<body>
+
+	<!-- увеличение картинки по клику из 3 блока -->
+	<div class="wrap-modal-zoom-img" id="img-zoom-step-1">		
+		<div class="contr-img-block3-zoom">
+			<img src="assets/jpg-png-svg/my-magazine.png" alt="мои магазины">
+		</div>
+	</div>
+
+	<div class="wrap-modal-zoom-img" id="img-zoom-step-2">		
+		<div class="contr-img-block3-zoom">
+			<img src="assets/jpg-png-svg/my-product.png" alt="мои продукты">
+		</div>
+	</div>
+	
+	<div class="wrap-modal-zoom-img" id="img-zoom-step-3">		
+		<div class="contr-img-block3-zoom">
+			<img src="assets/jpg-png-svg/main-table.png" alt="мои таблица">
+		</div>
+	</div>
+	<!-- /// увеличение картинки по клику из 3 блока -->
+
+
+
+	<!-- модальное окно входа  -->
+	<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+	  <div class="modal-dialog modal-dialog-centered wrap-login-form">
+		    <div class="modal-content">
+
+		      <div class="modal-header">
+					<h5 class="modal-title" id="exampleModalToggleLabel" hidden>Форма входа на сайт</h5>  	
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+
+		      <div class="modal-body">
+					<div class="inner-login-form">
+						<div class="title-login-form">Войдите в свой профиль</div>
+						<div class="main-contr-login">
+							<form>
+								<div class="form-contr-login">
+									<label class="label-login-form-item">
+										<input class="form-login form-authorization" type="text" name="username" value="" required>
+										<span class="text-form-login">Электронная почта</span>
+									</label>
+									<label class="label-login-form-item">
+										<input class="form-login form-authorization" id="form-password-one" type="password" name="password" value="" required>
+										<span class="text-form-login">Пароль</span>
+										<i class="fa fa-eye-slash" aria-hidden="true"></i>
+									</label>
+								</div>
+								<div class="no-password">
+									<a href="#">Не помню пароль</a>
+								</div>						
+								<div class="contr-but-login">
+									<button class="but-login" type="submit">
+										Войти
+									</button>
+								</div>
+							</form>
+						</div>
+						<div class="link-registration">
+							Ещё нет профиля? 
+							<button class="but-link-on-registration" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">
+								Зарегистрируйтесь
+							</button>
+						</div>				
+					</div>
+		      </div>
+
+		    </div>
+	  </div>
+	</div>
+	<!-- /// модальное окно входа  -->
+
+
+	<!-- модальное окно регистрации  -->
+	<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+	  <div class="modal-dialog modal-dialog-centered wrap-registration-form">
+	    <div class="modal-content">
+
+	      <div class="modal-header">
+				<h5 class="modal-title" id="exampleModalToggleLabel2" hidden>Форма регистрации</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+
+	      <div class="modal-body">	        
+				<div class="inner-registration-form">
+					<div class="title-registration-form">Создайте в свой профиль</div>
+					<div class="main-contr-registration">
+						<form>
+							<div class="form-contr-registration">
+								<label class="label-registration-form-item">
+									<input class="form-registration form-authorization" type="text" name="username"  value="" required>
+									<span class="text-form-registration">Имя</span>
+								</label>
+								<label class="label-registration-form-item">
+									<input class="form-registration form-authorization" type="text" name="telephone"  value="" required>
+									<span class="text-form-registration">Телефон</span>
+								</label>
+								<label class="label-registration-form-item">
+									<input class="form-registration form-authorization" type="text" name="mail"  value="" required>
+									<span class="text-form-registration">Почта</span>
+								</label>
+								<label class="label-registration-form-item">
+									<input class="form-registration form-authorization" id="form-password-two" type="password" name="password"  value="" required>
+									<span class="text-form-registration">Пароль</span>
+									<i class="fa fa-eye-slash fa-eye-slash-two" aria-hidden="true"></i>
+								</label>
+							</div>
+							<div class="no-password">
+								<a href="#">Не помню пароль</a>
+							</div>
+							<div class="contr-but-registration">
+								<button class="but-registration" type="submit">
+									Регистрация
+								</button>
+							</div>
+						</form>
+					</div>
+					<p class="privacy-policy-registration">
+						Регистрируясь в сервисе, Вы соглашаетесь со всеми условиями <a href="#">Пользовательского</a> соглашения и принимаете условия обработки данных, указанные в <a href="#">Политике конфиденциальности</a>.
+					</p>
+					<div class="link-registration">
+						Уже есть профиль? 
+				        <button class="but-link-on-login" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">
+				        	Войдите
+				        </button>
+					</div>			
+				</div>
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+	<!-- /// модальное окно регистрации -->
+
+    <!-- фиксированная шапка -->
+	<div class="fixed-contr1-head-none" id="fixed-white">
+		<div class="contr-fixed-header fixed-contr1-head">
+			<div class="block1-cont1">
+				<a class="link-logo-landing" href="#">
+					<!-- <i class="fa fa-ravelry" aria-hidden="true"></i> -->
+					<span class="img-logo-landing"></span>
+					MP<span class="logo-part-two">FOX</span>
+				</a>
+			</div>
+			<div class="block2-cont1">
+
+				<ul class="nav-header-landing">
+					<li class="row-nav-header">
+						<a class="link-nav-header" href="#why">Зачем?</a>
+					</li>
+					<li class="row-nav-header">
+						<a class="link-nav-header" href="#servise">О сервисе</a>
+					</li>
+					<li class="row-nav-header">
+						<a class="link-nav-header" href="#tarif">Тарифы</a>
+					</li>
+					<li class="row-nav-header">
+						<a class="link-nav-header" href="#">О нас</a>
+					</li>
+				</ul>
+
+				<button class="btn-toggle-menu-nav">
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</button>
+
+				<div class="block2-login el-block2-cont1 login-header-none">
+					<button class="but-login-landing" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
+					  Вход
+					</button>
+				</div>
+				<div class="block2-registration el-block2-cont1 login-header-none">
+					<button class="but-registration-landing" type="button"  data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">
+					  Регистрация
+					</button>
+				</div>
+			</div>
+		</div>		
+	</div>
+	<!-- /// фиксированная шапка -->	
+
+	<!-- выпадающее меню -->
+	<ul class="nav-header-landing nav-header-landing-drop">
+		<li class="row-nav-header">
+			<a class="link-nav-header" href="#why">Зачем?</a>
+		</li>
+		<li class="row-nav-header">
+			<a class="link-nav-header" href="#servise">О сервисе</a>
+		</li>
+		<li class="row-nav-header">
+			<a class="link-nav-header" href="#tarif">Тарифы</a>
+		</li>
+		<li class="row-nav-header">
+			<a class="link-nav-header" href="#">О нас</a>
+		</li>
+		<li class="row-nav-header row-nav-header-login">
+			<a class="link-nav-header" href="#tarif">Войти</a>
+		</li>
+		<li class="row-nav-header row-nav-header-login">
+			<a class="link-nav-header" href="#">Регистрация</a>
+		</li>
+	</ul>
+	<!-- /// выпадающее меню -->
+
+	<div class="background"></div>
+
+	<div class="wrapper Wrapper1">
+
+		<div class="container container-wrap1">
+			<div class="fixed-contr1-head fixed-contr1-head-margin">
+
+				<div class="block1-cont1">
+					<a class="link-logo-landing" href="#">
+						<span class="img-logo-landing"></span>
+						MP<span class="logo-part-two">FOX</span>
+					</a>
+				</div>
+				<div class="block2-cont1">
+					<ul class="nav-header-landing">
+						<li class="row-nav-header">
+							<a class="link-nav-header" href="#why">
+								Зачем?
+							</a>
+						</li>
+						<li class="row-nav-header">
+							<a class="link-nav-header" href="#servise">
+								О сервисе
+							</a>
+						</li>
+						<li class="row-nav-header">
+							<a class="link-nav-header" href="#tarif">
+								Тарифы
+							</a>
+						</li>
+						<li class="row-nav-header">
+							<a class="link-nav-header" href="#">
+								О нас
+							</a>
+						</li>
+					</ul>
+
+					<button class="btn-toggle-menu-nav">
+						<i class="fa fa-bars" aria-hidden="true"></i>
+					</button>
+
+					<div class="block2-login el-block2-cont1 login-header-none">
+						<button class="but-login-landing" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
+						  Вход
+						</button>
+					</div>
+					<div class="block2-registration el-block2-cont1 login-header-none">
+						<button class="but-registration-landing" type="button" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">
+						  Регистрация
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="container2-Header-welcome">
+
+				<div class="block1-cont2">
+					<h1 class="title-block1-cont2">
+						<span class="name-title">
+							используя наш сервис
+						</span>
+						<span class="pay-title">
+							ПРОДАВАЙТЕ 
+							<span class="title-block1-cont2-big">БОЛЬШЕ</span>
+						</span>
+						<span class="market-title">НА ПОПУЛЯРНЫХ МАРКЕТ-ПЛЭЙСАХ</span>
+					</h1>
+					<div class="MP-icon-block1-cont2">
+						<div class="contr-market-img contr-market-img-yandex">
+							<img class="market-place-img yandex-market" src="assets/jpg-png-svg/YM.png" alt="icon yandex market">
+						</div>
+
+						<div class="contr-market-img contr-market-img-ozon">
+							<img class="market-place-img ozon-market" src="assets/jpg-png-svg/OZ.png" alt="icon ozon market">		
+						</div>
+
+						<div class="contr-market-img contr-market-img-sber">
+							<img class="market-place-img sber-market" src="assets/jpg-png-svg/SM.png" alt="icon sber market">
+						</div>
+					</div>
+					<div class="text-block1-cont2">
+						<p class="header-descr-text">
+							Благодаря каждодневным оповещениям о&nbsp;ваших товарах потерявших топ позиции и&nbsp;причины этого. Таблице с&nbsp;подробными данными о&nbsp;ценах конкурентов, которые обошли вас в&nbsp;рейтинге.<wbr> Рекомендации по&nbsp;карточке товара и&nbsp;репрайсингу по&nbsp;API.			
+						</p>
+					</div>
+				</div>
+
+				<div class="block2-cont2">
+					<div class="video-block2-cont2">
+						<video class="header-video" height="250" src="https://www.youtube.com/embed/RLWCeFuKmk4" title="YouTube video player" poster="assets/jpg-png-svg/main-table.png">		
+						</video>
+					</div>
+					<div class="contr-button-block2-cont2">
+						<button class="btn-block2-contr2">
+							Попробовать бесплатно
+						</button>	
+					</div>					
+				</div>
+
+			</div>
+
+		</div>	<!-- container-wrap1 -->
+
+	</div>	<!-- Wrapper1 -->
+
+
+
+	<div class="wrapper Wrapper2" id="why">
+
+		<div class="container container-padding container-wrap2">
+
+			<div class="title-wrap2 title-wrap">
+				Зачем вам нужен данный сервис ?
+			</div>
+			<div class="content-wrap2 row row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-
+			center">
+				<div class="contr-benefit-box p-2">
+					<div class="content-wrap2-benefit benefit1 col">
+						<div class="benefit-icon">
+							<!-- <i class="fa fa-check-circle-o" aria-hidden="true"></i> -->
+						</div>						
+						<div class="title-benefit">
+							Экономия времени
+						</div>
+						<p class="text-benefit">
+							Автоматизируйте рутинный процесс ценообразования и освободите время под более важные задачи, благодаря файлу запрашиваемому по API.
+						</p>
+					</div>
+				</div>
+				<div class="contr-benefit-box p-2">
+					<div class="content-wrap2-benefit benefit2 col">
+						<div class="benefit-icon">
+							<!-- <i class="fa fa-check-circle-o" aria-hidden="true"></i> -->
+						</div>
+						<div class="title-benefit">
+							Больше продаж
+						</div>
+						<p class="text-benefit">
+							Благодаря оперативному и автоматическому изменению цены попадайте в число главных предложений на маркетплейсе и повышайте свои продажи. 
+						</p>							
+					</div>
+				</div>
+				<div class="contr-benefit-box p-2">
+					<div class="content-wrap2-benefit benefit3 col">
+						<div class="benefit-icon">
+							<!-- <i class="fa fa-check-circle-o" aria-hidden="true"></i> -->
+						</div>
+						<div class="title-benefit">
+							Увеличение контроля
+						</div>
+						<p class="text-benefit">
+							Отчёт в полном объёме доступен на вашем аккаунте в таблице с возможностью отфильтровать товары по тому есть ли у них конкуренты , находятся они в топе предложений по доставке или цене.
+						</p>					
+					</div>
+				</div>
+				<div class="contr-benefit-box p-2">
+					<div class="content-wrap2-benefit benefit4 col">
+						<div class="benefit-icon">
+							<!-- <i class="fa fa-check-circle-o" aria-hidden="true"></i> -->
+						</div>
+						<div class="title-benefit">
+							Удобство использования
+						</div>
+						<p class="text-benefit">
+							Запрос файла с информацией по товарам происходит всего в один клик. Оповещения с ключевой информацией будут приходить вам на почту или телеграмм.
+						</p>						
+					</div>
+				</div>				
+			</div>	
+
+		</div>  <!-- container-wrap2 -->
+		
+	</div>  <!-- Wrapper2 -->
+
+
+
+
+	<div class="wrapper Wrapper2-3">
+
+		<div class="background-wrap2-3"></div>
+
+		<div class="container container-padding container-wrap2-3">
+			<h2 class="title-review-landing title-wrap">
+				Отзывы некоторых из наших клиентов
+			</h2>
+
+			<div class="contr-card-landing">
+
+				<div class="owl-carousel owl-theme">
+					<div class="card-landing">
+						<div class="content-card">
+							<p class="text-card">
+								Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum.
+							</p>
+							<div class="contr-user-box">
+								<img class="img-user-box" src="assets/jpg-png-svg/avatar3.jpeg" alt="аватарка человека оставившего отзыв">
+								<div class="text-user-box">
+									<div class="text-1">ИНГРИТ ЕЛЬСОН</div>
+									<div class="text-2">UNIVERSE comp.</div>
+								</div>
+							</div>
+							<img class="quote-review" src="assets/jpg-png-svg/quote.svg" alt="цитата">		
+						</div>
+					</div>
+
+					<div class="card-landing">
+						<div class="content-card">
+							<p class="text-card">
+								Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum.
+							</p>
+							<div class="contr-user-box">
+								<img class="img-user-box" src="assets/jpg-png-svg/avatar3.jpeg" alt="аватарка человека оставившего отзыв">
+								<div class="text-user-box">
+									<div class="text-1">ИНГРИТ ЕЛЬСОН</div>
+									<div class="text-2">UNIVERSE comp.</div>
+								</div>
+							</div>
+							<img class="quote-review" src="assets/jpg-png-svg/quote.svg" alt="цитата">		
+						</div>
+					</div>
+					
+					<div class="card-landing">
+						<div class="content-card">
+							<p class="text-card">
+								Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum.
+							</p>
+							<div class="contr-user-box">
+								<img class="img-user-box" src="assets/jpg-png-svg/avatar3.jpeg" alt="аватарка человека оставившего отзыв">
+								<div class="text-user-box">
+									<div class="text-1">ИНГРИТ ЕЛЬСОН</div>
+									<div class="text-2">UNIVERSE comp.</div>
+								</div>
+							</div>
+							<img class="quote-review" src="assets/jpg-png-svg/quote.svg" alt="цитата">		
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>		
+
+	</div>   <!-- Wrapper2-3 -->
+
+
+
+
+	<div class="wrapper Wrapper3" id="servise">		
+
+		<div class="container container-padding container-wrap3">
+
+			<div class="title-wrap3 title-wrap">
+				Как пользоваться нашим сервисом ?
+			</div>
+				
+			<div class="step-row1 step-row">
+				<div class="step-row-block1">
+					<div class="step-row-subtitle">
+						<div class="step-row-icon">
+							<span>
+								1
+							</span>
+						</div>
+						<div class="step-row-subtitle-t">
+							<span>
+								Шаг первый
+							</span>						
+						</div>
+					</div>
+					<div class="step-row-text">
+						<p>
+							Вы добавляете список своих магазинов.
+							Магазин добавляете для каждого маркетплейса отдельно - это нужно для того, чтобы соотнести их с товарами, которые вы добавите позже.
+						</p>
+					</div>
+				</div>
+				<div class="step-row-img-zoom" data-img-zoom-id="img-zoom-step-1">
+					<i class="fa fa-search-plus" aria-hidden="true"></i>
+					<img class="img-step-row" src="assets/jpg-png-svg/my-magazine.png" alt="мои магазины">
+				</div>		
+			</div>	
+			<div class="step-row2 step-row">
+				<div class="step-row-block1">
+					<div class="step-row-subtitle">
+						<div class="step-row-icon">
+							<span>
+								2
+							</span>
+						</div>
+						<div class="step-row-subtitle-t">
+							<span>
+								Шаг второй
+							</span>						
+						</div>
+					</div>
+					<div class="step-row-text">
+						<p>
+							Далее добавляете файл с товарами или ссылки на него.
+							На этом моменте наша система сопоставляет список магазинов что вы ввели и загруженные товары.
+						</p>
+					</div>
+				</div>
+				<div class="step-row-img-zoom" data-img-zoom-id="img-zoom-step-2">
+					<i class="fa fa-search-plus" aria-hidden="true"></i>
+					<img class="img-step-row" src="assets/jpg-png-svg/my-product.png" alt="мои продукты">
+				</div>		
+			</div>	
+			<div class="step-row3 step-row">
+				<div class="step-row-block1">
+					<div class="step-row-subtitle">
+						<div class="step-row-icon">
+							<span>
+								3
+							</span>
+						</div>
+						<div class="step-row-subtitle-t">
+							<span>
+								Шаг третий
+							</span>						
+						</div>
+					</div>
+					<div class="step-row-text">
+						<p>
+							И последний этап - это добавление товаров в основную таблицу во вкладке "Мониторинг". Всё, теперь вы можете отслеживать данные о ваших товарах, а конкретно сколько конкурентов, находитесь ли вы в топе по цене или доставке, или ваш товар вообще не показывается в карточке. 
+						</p>
+					</div>
+				</div>
+				<div class="step-row-img-zoom" data-img-zoom-id="img-zoom-step-3">
+					<i class="fa fa-search-plus" aria-hidden="true"></i>
+					<img class="img-step-row" src="assets/jpg-png-svg/main-table.png" alt="главная таблица">
+				</div>		
+			</div>			
+
+		</div>  <!-- container-wrap3 -->
+	</div>  <!-- Wrapper3 -->
+
+
+
+	<div class="wrapper Wrapper4" id="tarif">
+
+		<div class="background-wrap4"></div>
+		
+		<div class="container container-padding container-wrap4">
+
+			<div class="title-wrap4 title-wrap">
+				Тарифы
+			</div>
+
+
+			<div class="tariffs-radio-row">
+				<div class="tariffs-radio-items">
+					<div class="tariffs-radio-item">
+						<input class="tariffs-radio-box" id="tarif-1" type="radio" name="tarif" value="one-month" checked>
+						<label class="label-radio-box -tarif-tab" data-id="price-one" for="tarif-1" id="tarif-radio-tab-1">
+							<span class="checkbox-tarif">
+								<i class="fa fa-check" aria-hidden="true"></i>
+							</span>
+							<span>1 месяц</span>
+						</label>
+					</div>
+					<div class="tariffs-radio-item">
+						<input  class="tariffs-radio-box" id="tarif-2" type="radio" name="tarif" value="one-month">
+						<label class="label-radio-box -tarif-tab" data-id="price-three" for="tarif-2" id="tarif-radio-tab-2">
+							<span class="checkbox-tarif">
+								<i class="fa fa-check" aria-hidden="true"></i>
+							</span>
+							<span class="contr-radio-item-text">
+								<span class="radio-item-text">3 месяц</span>
+								<span class="tarif-sale">-10%</span>
+							</span>						
+						</label>
+					</div>
+					<div class="tariffs-radio-item">
+						<input  class="tariffs-radio-box" id="tarif-3" type="radio" name="tarif" value="one-month">
+						<label class="label-radio-box -tarif-tab" data-id="price-six" for="tarif-3" id="tarif-radio-tab-3">
+							<span class="checkbox-tarif">
+								<i class="fa fa-check" aria-hidden="true"></i>
+							</span>
+							<span class="contr-radio-item-text">
+								<span class="radio-item-text">6 месяц</span>
+								<span class="tarif-sale">-20%</span>
+							</span>
+						</label>
+					</div>
+					<div class="tariffs-radio-item">
+						<input  class="tariffs-radio-box" id="tarif-4" type="radio" name="tarif" value="one-month">
+						<label class="label-radio-box -tarif-tab" data-id="price-twelve" for="tarif-4" id="tarif-radio-tab-4">
+							<span class="checkbox-tarif">
+								<i class="fa fa-check" aria-hidden="true"></i>
+							</span>
+							<span class="contr-radio-item-text">
+								<span class="radio-item-text">12 месяц</span>
+								<span class="tarif-sale">-30%</span>
+							</span>
+						</label>
+					</div>					
+				</div>
+			</div>
+
+			<div class="tarriffs-contr row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+
+				<div class="wrap-block-tarriffs col p-2 wrap-block-tarriffs-free">
+					<div class="card-my-tarif">
+						<div class="cont-card">
+						  	<h6 class="subtitle-card">тариф</h6>
+						  	<h5 class="title-card">Пробник</h5>
+						  	<div class="number-money">
+								<div class="tarif-price price-one">99$</div>
+								<div class="tarif-price price-three">99$</div>
+								<div class="tarif-price price-six">99$</div>
+								<div class="tarif-price price-twelve">99$</div>	
+							</div>
+					   	    <ul class="tarif-info">
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Доступно</span><div class="line-tarif-info"></div><span class="item-card-value">4000 тов.</span>
+					   	   	    </li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Скорость</span><div class="line-tarif-info"></div><span class="item-card-value">300мв\с</span>
+					   	   	    </li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Услуга</span><div class="line-tarif-info"></div><span class="item-card-value">вкл.</span></li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Услуга</span><div class="line-tarif-info"></div><span class="item-card-value">вкл.</span></li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Условие</span><div class="line-tarif-info"></div><span class="item-card-value">вкл.</span></li>
+					   	    </ul>
+
+							<!-- выпадающий список по нажатию подробнее для мобилок -->
+							<div class="contr-tarif-list-drop">
+								<ul class="tarif-info tarif-info-drop" id="id-list-drop-tarif-1">
+						   	   	    <li>
+						   	   	    	<span class="item-card-name">
+							   	   	    	Доступно
+							   	   	    </span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		4000 тов.
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Скорость
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		300мв\с
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Услуга
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		вкл.
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Услуга
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		вкл.
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Условие
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		вкл.
+						   	   	    	</span>
+						   	   	    </li>
+						   	    </ul>
+						   	    <span class="but-drop-list-tarif" data-list-drop="id-list-drop-tarif-1">
+						   	    	<small>
+						   	    		Подробнее
+						   	    	</small>				   	    	
+						   	    </span>				   	    	
+					   	    </div>
+					   	    <!-- /// выпадающий список по нажатию подробнее для мобилок -->
+
+					   	    <button class="but-tariff">Взять</button>
+					   	</div>    			   	
+				    </div>
+					
+				</div>
+				
+				<div class="wrap-block-tarriffs col p-2 wrap-block-tarriffs-light">
+					<div class="card-my-tarif">
+						  <div class="cont-card">
+						  	<h6 class="subtitle-card">тариф</h6>
+						  	<h5 class="title-card">Базовый</h5>
+						  	<div class="number-money">
+								<div class="tarif-price price-one">99$</div>
+								<div class="tarif-price price-three">
+							  		<div class="old-price">
+							  			<span class="old-money">95$</span> <span class="sale-money"> -5$</span>
+							  		</div>
+							  		90$
+							  	</div>
+								<div class="tarif-price  price-six">
+							  		<div class="old-price">
+							  			<span class="old-money">80$</span> <span class="sale-money"> -5$</span>
+							  		</div>
+							  		90$
+							  	</div>
+								<div class="tarif-price price-twelve">
+							  		<div class="old-price">
+							  			<span class="old-money">70$</span> <span class="sale-money"> -5$</span>
+							  		</div>
+							  		90$
+							  	</div>
+							</div>
+					   	    <ul class="tarif-info">
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Доступно</span><div class="line-tarif-info"></div><span class="item-card-value">4000 тов.</span>
+					   	   	    </li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Скорость</span><div class="line-tarif-info"></div><span class="item-card-value">300мв\с</span>
+					   	   	    </li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Услуга</span><div class="line-tarif-info"></div><span class="item-card-value">вкл.</span></li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Услуга</span><div class="line-tarif-info"></div><span class="item-card-value">вкл.</span></li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Условие</span><div class="line-tarif-info"></div><span class="item-card-value">вкл.</span></li>
+					   	    </ul>
+
+							<!-- выпадающий список по нажатию подробнее для мобилок -->
+							<div class="contr-tarif-list-drop">
+								<ul class="tarif-info tarif-info-drop" id="id-list-drop-tarif-2">
+						   	   	    <li>
+						   	   	    	<span class="item-card-name">
+							   	   	    	Доступно
+							   	   	    </span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		4000 тов.
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Скорость
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		300мв\с
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Услуга
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		вкл.
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Услуга
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		вкл.
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Условие
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		вкл.
+						   	   	    	</span>
+						   	   	    </li>
+						   	    </ul>
+						   	    <span class="but-drop-list-tarif" data-list-drop="id-list-drop-tarif-2">
+						   	    	<small>
+						   	    		Подробнее
+						   	    	</small>				   	    	
+						   	    </span>				   	    	
+					   	    </div>
+					   	    <!-- /// выпадающий список по нажатию подробнее для мобилок -->
+
+					   	    <button class="but-tariff">Купить</button>
+					   	  </div>    			   	
+				      </div>
+					
+				</div>
+
+
+				<div class="wrap-block-tarriffs col p-2 wrap-block-tarriffs-standart">
+					<div class="card-my-tarif">
+						  <div class="cont-card">
+						  	<h6 class="subtitle-card">тариф</h6>
+						  	<h5 class="title-card">Расширенный</h5>
+						  	<div class="number-money">
+								<div class="tarif-price price-one">99$</div>
+								<div class="tarif-price price-three">
+							  		<div class="old-price">
+							  			<span class="old-money">95$</span> <span class="sale-money"> -5$</span>
+							  		</div>
+							  		90$
+							  	</div>
+								<div class="tarif-price  price-six">
+							  		<div class="old-price">
+							  			<span class="old-money">80$</span> <span class="sale-money"> -5$</span>
+							  		</div>
+							  		90$
+							  	</div>
+								<div class="tarif-price price-twelve">
+							  		<div class="old-price">
+							  			<span class="old-money">70$</span> <span class="sale-money"> -5$</span>
+							  		</div>
+							  		90$
+							  	</div>
+							</div>
+					   	    <ul class="tarif-info">
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Доступно</span><div class="line-tarif-info"></div><span class="item-card-value">4000 тов.</span>
+					   	   	    </li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Скорость</span><div class="line-tarif-info"></div><span class="item-card-value">300мв\с</span>
+					   	   	    </li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Услуга</span><div class="line-tarif-info"></div><span class="item-card-value">вкл.</span></li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Услуга</span><div class="line-tarif-info"></div><span class="item-card-value">вкл.</span></li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Условие</span><div class="line-tarif-info"></div><span class="item-card-value">вкл.</span></li>
+					   	    </ul>
+
+							<!-- выпадающий список по нажатию подробнее для мобилок -->
+							<div class="contr-tarif-list-drop">
+								<ul class="tarif-info tarif-info-drop" id="id-list-drop-tarif-3">
+						   	   	    <li>
+						   	   	    	<span class="item-card-name">
+							   	   	    	Доступно
+							   	   	    </span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		4000 тов.
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Скорость
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		300мв\с
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Услуга
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		вкл.
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Услуга
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		вкл.
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Условие
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		вкл.
+						   	   	    	</span>
+						   	   	    </li>
+						   	    </ul>
+						   	    <span class="but-drop-list-tarif" data-list-drop="id-list-drop-tarif-3">
+						   	    	<small>
+						   	    		Подробнее
+						   	    	</small>				   	    	
+						   	    </span>				   	    	
+					   	    </div>
+					   	    <!-- /// выпадающий список по нажатию подробнее для мобилок -->
+
+					   	    <button class="but-tariff">Купить</button>
+					   	  </div>    			   	
+				      </div>
+					
+				</div>	
+
+				<div class="wrap-block-tarriffs col p-2 wrap-block-tarriffs-professional">
+					<div class="card-my-tarif">
+						  <div class="cont-card">
+						  	<h6 class="subtitle-card">тариф</h6>
+						  	<h5 class="title-card">Продвинутый</h5>
+						  	<div class="number-money">
+								<div class="tarif-price price-one">99$</div>
+								<div class="tarif-price price-three">
+							  		<div class="old-price">
+							  			<span class="old-money">95$</span> <span class="sale-money"> -5$</span>
+							  		</div>
+							  		90$
+							  	</div>
+								<div class="tarif-price  price-six">
+							  		<div class="old-price">
+							  			<span class="old-money">80$</span> <span class="sale-money"> -5$</span>
+							  		</div>
+							  		90$
+							  	</div>
+								<div class="tarif-price price-twelve">
+							  		<div class="old-price">
+							  			<span class="old-money">70$</span> <span class="sale-money"> -5$</span>
+							  		</div>
+							  		90$
+							  	</div>
+							</div>
+					   	    <ul class="tarif-info">
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Доступно</span><div class="line-tarif-info"></div><span class="item-card-value">4000 тов.</span>
+					   	   	    </li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Скорость</span><div class="line-tarif-info"></div><span class="item-card-value">300мв\с</span>
+					   	   	    </li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Услуга</span><div class="line-tarif-info"></div><span class="item-card-value">вкл.</span></li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Услуга</span><div class="line-tarif-info"></div><span class="item-card-value">вкл.</span></li>
+					   	   	    <li>
+					   	   	    	<span class="item-card-name">Условие</span><div class="line-tarif-info"></div><span class="item-card-value">вкл.</span></li>
+					   	    </ul>
+
+							<!-- выпадающий список по нажатию подробнее для мобилок -->
+							<div class="contr-tarif-list-drop">
+								<ul class="tarif-info tarif-info-drop" id="id-list-drop-tarif-4">
+						   	   	    <li>
+						   	   	    	<span class="item-card-name">
+							   	   	    	Доступно
+							   	   	    </span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		4000 тов.
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Скорость
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		300мв\с
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Услуга
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		вкл.
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Услуга
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		вкл.
+						   	   	    	</span>
+						   	   	    </li>
+						   	   	    <li class="tarif-item-none">
+						   	   	    	<span class="item-card-name">
+						   	   	    		Условие
+						   	   	    	</span>
+						   	   	    	<div class="line-tarif-info">
+						   	   	    	</div>
+						   	   	    	<span class="item-card-value">
+						   	   	    		вкл.
+						   	   	    	</span>
+						   	   	    </li>
+						   	    </ul>
+						   	    <span class="but-drop-list-tarif" data-list-drop="id-list-drop-tarif-4">
+						   	    	<small>
+						   	    		Подробнее
+						   	    	</small>				   	    	
+						   	    </span>				   	    	
+					   	    </div>
+					   	    <!-- /// выпадающий список по нажатию подробнее для мобилок -->
+
+					   	    <button class="but-tariff">Купить</button>
+					   	  </div>    			   	
+				      </div>
+					
+				</div>								
+
+			</div>
+
+			<div class="contr-demo">
+				<p class="text-demo">
+					Сравните свои 10 товаров <span class="free-demo">бесплатно!</span>
+				</p>
+				<button class="but-demo">Попробовать</button>
+			</div>
+			
+		</div>  <!-- container-wrap4 -->
+
+		
+
+	</div>  <!-- Wrapper4 -->
+
+
+
+
+    <div class="wrapper Wrapper5">
+
+    	<div class="basement-wrap5">
+
+			<div class="block1-basement block-basement">
+				<ul>
+					<li>
+						<div class="title-block">
+							Помощь					
+						</div>
+					</li>
+					<li>
+						<a class="item-li-block basement-link" href="#">
+							<div class="item-li-icon">
+								<i class="fa fa-envelope" aria-hidden="true"></i>	
+							</div>
+							<div class="item-li-link">
+									support@parser.ru
+							</div>
+						</a>
+					</li>
+					<li>
+						<a class="item-li-block basement-link" href="#">	<div class="item-li-icon">
+								<i class="fa fa-telegram" aria-hidden="true"></i>	
+							</div>
+							<div class="item-li-link">
+								Telegram support
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="block2-basement block-basement">
+				<ul>
+					<li>
+						<div class="title-block">
+							О нас 
+						</div>
+					</li>
+					<li>
+						<div class="text-block">
+							<a class="basement-link" href="#">
+								Политика конфиденциальности
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="text-block">
+							<a class="basement-link" href="#">
+								Правила проекта						
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="block3-basement block-basement">
+				<div class="title-block title-block-3">
+					<a class="basement-link" href="#">
+						Информация об оплате						
+					</a>
+				</div>
+
+				<div class="contr-img-block">
+					<div class="item-img-block item-m-card">
+						<img src="assets/jpg-png-svg/mastercard2.png" alt="способ оплаты мастеркард">
+					</div>	
+					<div class="item-img-block item-viza">
+						<img src="assets/jpg-png-svg/viza.png" alt="способ оплаты виза">
+					</div>	
+					<div class="item-img-block item-mir">
+						<img src="assets/jpg-png-svg/mir.png" alt="способ оплаты мир">
+					</div>							
+				</div>			
+						
+			</div>
+
+		</div>   <!-- basement-wrap5 -->
+    	
+    </div>  <!-- Wrapper5 -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">    	
+    </script>
+    <script src="assets/jquery/jquery-3.6.0.min.js"></script>
+	<script src="assets/owlcarousel/owl.carousel.min.js"></script>
+
+
+
+	<!-- выпадающая главная навигация в шапке  -->
+    <script>
+		let btnToggleNav = document.querySelectorAll('.btn-toggle-menu-nav');
+		let navDrop = document.querySelector('.nav-header-landing-drop');
+
+		btnToggleNav.forEach((item) => item.addEventListener('click', function(){
+			btnToggleNav.forEach((it) => it.classList.toggle('btn-toggle-nav-active'));
+			navDrop.classList.toggle('nav-drop-active');
+			})
+		);
+	</script>
+	<!-- /// выпадающая главная навигация в шапке -->
+
+
+
+	<!-- модальное окно авторизации и регистрации -->
+    <script>
+		let faEye = document.querySelector('.fa-eye-slash');
+		let faEyeTwo = document.querySelector('.fa-eye-slash-two');
+		let faEyeActive = document.querySelector('.fa-eye-active');
+		let formPassOne = document.getElementById('form-password-one');
+		let formPassTwo = document.getElementById('form-password-two');
+		let formAttr = formPassOne.getAttribute('type');
+		let formAutho = document.querySelectorAll(".form-authorization");
+
+		faEye.onclick = function(e){
+			faEye.classList.toggle('fa-eye-active');
+			if(faEye.classList.contains('fa-eye-active')){
+				formPassOne.setAttribute('type','text');		
+			}else{
+				formPassOne.setAttribute('type','password');	
+			}
+		};
+
+		faEyeTwo.onclick = function(e){
+			faEyeTwo.classList.toggle('fa-eye-active');
+			if(faEyeTwo.classList.contains('fa-eye-active')){
+				formPassTwo.setAttribute('type','text');		
+			}else{
+				formPassTwo.setAttribute('type','password');	
+			}
+		};
+
+		formAutho.forEach((item) => item.addEventListener("change", function(){
+			  if(this.value.length){
+			   this.classList.add('value-true');
+			   }else{
+			   this.classList.remove('value-true');
+			   };
+			})
+		);
+	</script>
+	<!-- /// модальное окно авторизации и регистрации -->
+
+	
+
+    <!-- Прибавляет  анимацию в шапку сайта при прокрутке --> 
+	<script>
+		window.onscroll = function () {fixedWhite()};
+
+		function fixedWhite() {
+			if (document.documentElement.scrollTop > 400 ) {
+				document.getElementById('fixed-white').classList.add("white");
+			};
+
+			if (document.documentElement.scrollTop < 400 ) {
+				document.getElementById('fixed-white').classList.remove('white');
+			};
+		};
+	</script>
+    <!-- /// Прибавляет  анимацию в шапку сайта при прокрутке -->
+
+
+
+	<!-- Отзывы -->
+	<script>
+		$('.owl-carousel').owlCarousel({
+	    center: true,
+	    items:2,
+	    loop:true,
+	    margin:20,
+	    nav:true,
+	    autoWidth: true,
+	    responsive:{
+		        0:{
+		            items:1
+		        },
+		        600:{
+		            items:2
+		        },
+		        1000:{
+		            items:3
+		        }
+		    }
+		})
+	</script>
+	<!-- /// Отзывы -->
+
+
+
+	<!-- окно увеличенной фотографии -->
+	<script>
+		let stepImgZoom = document.querySelectorAll('.step-row-img-zoom');
+		let wrapImgZoom = document.querySelectorAll('.wrap-modal-zoom-img');
+
+		stepImgZoom.forEach((item)=> item.addEventListener('click', function(){
+			const id = item.getAttribute('data-img-zoom-id');
+
+			document.getElementById(id).classList.add('modal-zoom-img-active');
+			})
+		);
+
+		wrapImgZoom.forEach((it)=> it.addEventListener('click', function(){
+			it.classList.remove('modal-zoom-img-active');
+			})
+		);
+	</script>
+	<!-- /// окно увеличенной фотографии -->
+
+
+
+	<!-- "тарифы" radio-tabs -->
+	<script>
+		let tarifTab = document.querySelectorAll('.-tarif-tab');	
+		let tarifPrice = document.querySelectorAll('.tarif-price');
+
+		tarifTab.forEach((item) => item.addEventListener('click', function(){
+			let priseClassAll = item.getAttribute('data-id');			
+
+			tarifPrice.forEach((it) => it.classList.remove('price-active'));
+			Array.from(document.getElementsByClassName(priseClassAll)).forEach((i) => i.classList.add('price-active'));
+
+			})
+		);
+
+		document.querySelector('.-tarif-tab').click();
+	</script>
+	<!-- /// "тарифы" radio-tabs -->
+
+
+
+	<!-- "тарифы" list-drop -->
+	<script>
+		let listDrop = document.querySelectorAll('.tarif-info-drop');
+		let butListDrop = document.querySelectorAll('.but-drop-list-tarif');
+
+		butListDrop.forEach((item) => item.addEventListener('click', function(){
+			let id = item.getAttribute('data-list-drop');
+
+			document.getElementById(id).classList.toggle('tarif-list-active');
+			item.classList.toggle('but-list-active');
+
+			})
+		);
+	</script>
+	<!-- /// "тарифы" list-drop -->
+
+
+
+</body>
+</html>

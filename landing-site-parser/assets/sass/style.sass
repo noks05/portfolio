@@ -1,0 +1,110 @@
+@font-face
+	font-family: 'Ubuntu'
+	src: local('UbuntuLight') 
+	src: url('../fonts/UbuntuLight.woff2') format('woff2'), url('../fonts/UbuntuLight.woff') format('woff')
+	font-weight: 300
+	font-display: swap
+	
+@font-face
+	font-family: 'Ubuntu'
+	src: local('UbuntuRegular')
+	src: url('../fonts/UbuntuRegular.woff2') format('woff2'), url('../fonts/UbuntuRegular.woff') format('woff')
+	font-weight: 400
+	font-display: swap
+	
+@font-face
+	font-family: 'Ubuntu'
+	src: local('UbuntuMedium')
+	src: url('../fonts/UbuntuMedium.woff2') format('woff2'), url('../fonts/UbuntuMedium.woff') format('woff')
+	font-weight: 500
+	font-display: swap
+	
+@font-face
+	font-family: 'Ubuntu'
+	src: local('UbuntuBold')
+	src: url('../fonts/UbuntuBold.woff2') format('woff2'), url('../fonts/UbuntuBold.woff') format('woff')
+	font-weight: 700
+	font-display: swap
+
+
+$green: #109a3e
+$green-light: #2bc27a
+$green-light: #2bc231
+$green-light: #ff8724fc
+$green-light-o: #37c63d21
+$green-light-o: #ff87241f
+$green-dirty: #73827b
+$red: #f00
+$blue: #258cff
+$blue-light: #5ca9ff
+$dark-blue: #174578
+
+
+*
+	margin: 0
+	padding: 0
+
+body
+	box-sizing: border-box
+	min-height: 100vh
+	font-family: 'Ubuntu', sans-serif
+	font-weight: 300
+	line-height: normal
+	background: #E4E5EC
+
+*,
+*::before,
+*::after 
+	box-sizing: inherit
+
+img 
+	max-width: 100%
+
+a
+	text-decoration: none
+
+ul
+	padding-left: 0
+
+ul,ol,li
+	list-style: none
+	
+p
+	margin-bottom: 0
+
+.wrapper
+	position: relative
+	max-width: 100%
+	overflow: hidden
+
+.container
+	position: relative
+	max-width: 1200px
+	margin: 0 auto
+	z-index: 3
+
+	@media(max-width: 1250px)
+		padding: 0 20px
+
+.container-padding
+	padding: 70px 20px 130px
+
+.Wrapper2,
+.Wrapper3
+	background-color: #f3f3f3
+
+.title-wrap
+	text-align: center
+	margin-bottom: 80px
+	font-size: 24px
+	font-weight: 400
+
+// Блоки из которых состоит лэндинг парсера
+@import "block-1-header"
+@import "block-2-benefits"
+@import "block-3-review-landing"
+@import "block-4-step-tutorial"
+@import "block-5-tarrifs"
+@import "block-6-basement"
+@import "login-form"
+@import "registration-form"
